@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root :to => 'pages#index'
+
+  %w[about index cv].each do |page|
+    get page, controller: 'pages', action: page
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
